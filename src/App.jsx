@@ -1,15 +1,36 @@
+import { useEffect, useState } from 'react';
 import './App.scss';
 import icon_сlubs from "./assets/images/сlubs.png";
 import icon_hearts from "./assets/images/hearts.png";
 import icon_spades from "./assets/images/spades.png";
 import icon_diamonds from "./assets/images/diamonds.png";
+import { AnimatedCounter } from 'react-animated-counter';
 
 const App = () => {
+  const [counterValue, setCounterValue] = useState(1634696);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const randomAddition = Math.floor(Math.random() * 20) + 1;
+      setCounterValue(prevCount => prevCount + randomAddition);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+
   return (
     <div className="wrapper">
       <div className="app">
         <div className="app__header header">
-          <div className="header__jackpot-value">1,003,996</div>
+          <div className="header__jackpot-value">
+            <AnimatedCounter
+              value={counterValue}
+              includeDecimals={false}
+              includeCommas={true}
+              fontSize="clamp(3.63rem, calc(2.45rem + 5.89vw), 7.75rem)"
+            />
+          </div>
         </div>
         <div className="app__body">
           <div className="app__body-fields">
