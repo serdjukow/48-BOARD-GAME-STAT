@@ -8,27 +8,36 @@ import { AnimatedCounter } from 'react-animated-counter';
 
 const App = () => {
   const [counterValue, setCounterValue] = useState(1000000);
+  const [animate, setAnimate] = useState(false)
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const randomAddition = Math.floor(Math.random() * 20) + 1;
+      const randomAddition = Math.floor(Math.random() * 100) + 1;
       setCounterValue(prevCount => prevCount + randomAddition);
-    }, 1000);
+      setAnimate(true);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    if (animate) {
+      const timeout = setTimeout(() => setAnimate(false), 3000);
+      return () => clearTimeout(timeout);
+    }
+  }, [animate]);
 
 
   return (
     <div className="wrapper">
       <div className="app">
         <div className="app__header header">
-          <div className="header__jackpot-value">
+          <div className={`header__jackpot-value ${animate ? 'animate' : ''}`}>
             <AnimatedCounter
               value={counterValue}
               includeDecimals={false}
               includeCommas={true}
-              fontSize={false}//="clamp(2.63rem, calc(2.45rem + 5.89vw), 7.75rem)"
+              fontSize={false}
             />
           </div>
         </div>
@@ -153,7 +162,42 @@ const App = () => {
         </div>
         <div className="app__footer footer">
           <div className="footer__container">
-            <div className="footer__coefficients coefficients"></div>
+            <div className="footer__coefficients coefficients">
+              <div className="coefficients__items">
+                <div className="coefficients__item coefficients-item">
+                  <div className="coefficients-item__value">
+                    43%
+                  </div>
+                  <div className="coefficients-item__icon">
+                    <img src={icon_сlubs} alt="" />
+                  </div>
+                </div>
+                <div className="coefficients__item coefficients-item">
+                  <div className="coefficients-item__value">
+                    3%
+                  </div>
+                  <div className="coefficients-item__icon">
+                    <img src={icon_hearts} alt="" />
+                  </div>
+                </div>
+                <div className="coefficients__item coefficients-item">
+                  <div className="coefficients-item__value">
+                    14%
+                  </div>
+                  <div className="coefficients-item__icon">
+                    <img src={icon_diamonds} alt="" />
+                  </div>
+                </div>
+                <div className="coefficients__item coefficients-item">
+                  <div className="coefficients-item__value">
+                    40%
+                  </div>
+                  <div className="coefficients-item__icon">
+                    <img src={icon_spades} alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
             <div className="footer__hot hot">
             </div>
             <div className="footer__ice ice">
