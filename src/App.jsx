@@ -7,7 +7,7 @@ import icon_diamonds from "./assets/images/diamonds.png";
 import { AnimatedCounter } from 'react-animated-counter';
 
 const App = () => {
-  const [counterValue, setCounterValue] = useState(1634696);
+  const [counterValue, setCounterValue] = useState(1000000);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -28,7 +28,7 @@ const App = () => {
               value={counterValue}
               includeDecimals={false}
               includeCommas={true}
-              fontSize="clamp(3.63rem, calc(2.45rem + 5.89vw), 7.75rem)"
+              fontSize={false}//="clamp(2.63rem, calc(2.45rem + 5.89vw), 7.75rem)"
             />
           </div>
         </div>
@@ -36,8 +36,7 @@ const App = () => {
           <div className="app__body-fields">
 
             <div className="app__body-field body-field">
-              <div className="body-field__range">2</div>
-
+              <div className="body-field__range">1</div>
               <div className="body-field__result">
                 <div className="body-field__result-item result-item">
                   <div className="result-item__value">
@@ -74,8 +73,7 @@ const App = () => {
               </div>
             </div>
             <div className="app__body-field body-field">
-              <div className="body-field__range">1</div>
-
+              <div className="body-field__range">2</div>
               <div className="body-field__result">
                 <div className="body-field__result-item result-item">
                   <div className="result-item__value">
@@ -110,10 +108,58 @@ const App = () => {
                   </div>
                 </div>
               </div>
+
+            </div>
+            <div className="app__body-field body-field">
+              <div className="body-field__range">3</div>
+            </div>
+            <div className="app__body-field body-field">
+              <div className="body-field__range">4</div>
+            </div>
+            <div className="app__body-field body-field">
+              <div className="body-field__range">5</div>
+            </div>
+            <div className="app__body-field body-field">
+              <div className="body-field__range">6</div>
+            </div>
+            <div className="app__body-field body-field">
+              <div className="body-field__range">7</div>
+            </div>
+            <div className="app__body-field body-field">
+              <div className="body-field__range">8</div>
+            </div>
+            <div className="app__body-field body-field">
+              <div className="body-field__range">9</div>
+            </div>
+            <div className="app__body-field body-field">
+              <div className="body-field__range">10</div>
+            </div>
+            <div className="app__body-field body-field">
+              <div className="body-field__range">11</div>
+            </div>
+            <div className="app__body-field body-field">
+              <div className="body-field__range">12</div>
+            </div>
+            <div className="app__body-field body-field">
+              <div className="body-field__range">13</div>
+            </div>
+            <div className="app__body-field body-field">
+              <div className="body-field__range">14</div>
+            </div>
+            <div className="app__body-field body-field">
+              <div className="body-field__range">15</div>
             </div>
           </div>
         </div>
-        <div className="app__footer">footer</div>
+        <div className="app__footer footer">
+          <div className="footer__container">
+            <div className="footer__coefficients coefficients"></div>
+            <div className="footer__hot hot">
+            </div>
+            <div className="footer__ice ice">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
