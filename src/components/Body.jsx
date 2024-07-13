@@ -1,21 +1,18 @@
 import React, { useState, useEffect } from 'react';
 
-const suits = ['hearts', 'diamonds', 'clubs', 'spades'];
-const ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+const suits = ['clubs', 'hearts', 'diamonds', 'spades'];
+const ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'T'];
 
-const generateRandomCard = () => {
-    const suit = suits[Math.floor(Math.random() * suits.length)];
-    const rank = ranks[Math.floor(Math.random() * ranks.length)];
-    return { suit, rank };
+const generateRandomRank = () => {
+    return ranks[Math.floor(Math.random() * ranks.length)];
 };
 
-const generateRandomCards = (numCards) => {
-    const cards = [];
-    for (let i = 0; i < numCards; i++) {
-        cards.push(generateRandomCard());
-    }
-    return cards;
-}
+const generateRandomCards = () => {
+    return suits.map(suit => ({
+        suit,
+        rank: generateRandomRank()
+    }));
+};
 
 const Body = () => {
     const [fields, setFields] = useState(Array(15).fill(null));

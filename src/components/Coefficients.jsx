@@ -25,7 +25,7 @@ const Coefficients = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setPercentages(generateRandomPercentages());
-        }, 3000);
+        }, 2000);
 
         return () => clearInterval(interval);
     }, []);
