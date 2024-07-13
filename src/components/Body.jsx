@@ -19,7 +19,6 @@ const generateRandomCards = (numCards) => {
 
 const Body = () => {
     const [fields, setFields] = useState(Array(15).fill(null));
-    console.log(fields);
 
     useEffect(() => {
         const interval = setInterval(() => {
