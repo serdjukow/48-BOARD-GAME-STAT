@@ -71,16 +71,18 @@ body {
     mix-blend-mode: plus-lighter;
   }
   &__jackpot-value {
+    position: relative;
     display: flex;
     margin-top: 3.5%;
-    font-size: clamp(5.5rem, calc(0.44rem + 7.5vw), 7.19rem);
+    font-size: clamp(6.44rem, calc(2.5rem + 5.83vw), 7.75rem);
     transition: cubic-bezier(0.37, 0.69, 0.71, 0.51);
     transform-origin: center;
+    will-change: auto;
     @media (max-width: 1079.99px) {
       font-size: clamp(1.88rem, calc(-0.05rem + 8.23vw), 5.5rem);
     }
     &.animate {
-      animation: scaleUpDown 3s ease-in-out forwards;
+      animation: scaleUpDown 3s;
     }
   }
 }
@@ -89,11 +91,11 @@ body {
   0% {
     transform: scale(1);
   }
-  23.08% {
-    transform: scale(1.2);
+  23.81% {
+    transform: scale(1.15);
   }
-  76.92% {
-    transform: scale(1.2);
+  71.43% {
+    transform: scale(1.15);
   }
   100% {
     transform: scale(1);
@@ -135,11 +137,14 @@ body {
     left: 4%;
     font-size: clamp(1.25rem, calc(0.28rem + 4.13vw), 4rem);
     color: #fff;
+    width: 7%;
+    text-align: end;
   }
 
   &__result {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 4%;
     max-width: 73%;
     width: 100%;
   }
@@ -156,32 +161,40 @@ body {
     @media (max-width: 1079.99px) {
       font-size: clamp(1.38rem, calc(-0.02rem + 5.96vw), 4rem);
     }
+    &.clubs {
+      color: #33ff00;
+    }
+    &.hearts {
+      color: #d40101;
+    }
+    &.diamonds {
+      color: #ff4b4b;
+    }
+    &.spades {
+      color: #000;
+    }
   }
   &__icon {
-    //flex: 0 0 clamp(1.25rem, calc(0.06rem + 5.07vw), 4.63rem);
+    aspect-ratio: 1/1;
     width: clamp(3.13rem, calc(-1.37rem + 6.67vw), 4.63rem);
-    img {
-      display: inline-block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      vertical-align: middle;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &.clubs {
+      background-image: url("./assets/images/сlubs.png");
+    }
+    &.hearts {
+      background-image: url("./assets/images/hearts.png");
+    }
+    &.diamonds {
+      background-image: url("./assets/images/diamonds.png");
+    }
+    &.spades {
+      background-image: url("./assets/images/spades.png");
     }
     @media (max-width: 1079.99px) {
       width: clamp(1.25rem, calc(0.25rem + 4.26vw), 3.13rem);
     }
-  }
-  &:nth-child(1) {
-    color: #33ff00;
-  }
-  &:nth-child(2) {
-    color: #d40101;
-  }
-  &:nth-child(3) {
-    color: #ff4b4b;
-  }
-  &:nth-child(4) {
-    color: #000;
   }
 }
 
@@ -189,8 +202,6 @@ body {
   text-align: center;
   span {
     text-align: end;
-    //font-size: clamp(3.63rem, calc(2.45rem + 5.89vw), 7.75rem) !important;
-    //line-height: 1.28 !important;
     text-transform: uppercase;
     background: linear-gradient(
       240deg,
@@ -221,22 +232,6 @@ body {
     -webkit-text-fill-color: transparent;
   }
 }
-
-// counter
-
-.ticker-column {
-  height: 180px;
-}
-
-// .ticker-column > .ticker-digit {
-//   height: clamp(3.63rem, calc(2.45rem + 5.89vw), 7.75rem) !important;
-//   line-height: clamp(3.63rem, calc(2.45rem + 5.89vw), 7.75rem) !important;
-// }
-
-// .ticker-column > .ticker-digit > span {
-//   height: clamp(3.63rem, calc(2.45rem + 5.89vw), 7.75rem) !important;
-//   line-height: clamp(3.63rem, calc(2.45rem + 5.89vw), 7.75rem) !important;
-// }
 
 .footer {
   &__container {
@@ -276,18 +271,16 @@ body {
     width: 100%;
     gap: 6.5%;
   }
-  &__item {
-    aspect-ratio: 1/1;
-    width: 11.36%;
-    position: relative;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url("./assets/images/coefficients-item-bg.png");
-  }
 }
 
 .coefficients-item {
+  aspect-ratio: 1/1;
+  width: 11.36%;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("./assets/images/coefficients-item-bg.png");
   text-align: center;
   &__value {
     font-size: clamp(0.56rem, calc(0.1rem + 1.97vw), 1.88rem);
@@ -307,6 +300,21 @@ body {
       height: 100%;
       object-fit: cover;
       vertical-align: middle;
+    }
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &.clubs {
+      background-image: url("./assets/images/сlubs.png");
+    }
+    &.hearts {
+      background-image: url("./assets/images/hearts.png");
+    }
+    &.diamonds {
+      background-image: url("./assets/images/diamonds.png");
+    }
+    &.spades {
+      background-image: url("./assets/images/spades.png");
     }
   }
 }
