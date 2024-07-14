@@ -45,7 +45,7 @@ const Body = () => {
                         <div className="body-field__result">
                             {field ? field.map((card, idx) => (
                                 <div key={idx} className={`body-field__result-item result-item`}>
-                                    <div className={`result-item__value ${card.suit}`}>
+                                    <div className={`result-item__ranks ${card.suit}`}>
                                         {card.rank}
                                     </div>
                                     <div className={`result-item__icon ${card.suit}`}>

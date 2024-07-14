@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-
 const suits = ['clubs', 'hearts', 'diamonds', 'spades'];
 const generateRandomPercentages = () => {
     const percentages = {};
@@ -36,7 +35,7 @@ const Coefficients = () => {
                 {suits.map((suit, index) => (
                     <div key={index} className={`coefficients__item coefficients-item ${suit}`}>
 
-                        <div className="coefficients-item__value">
+                        <div className="coefficients-item__ranks">
                             {percentages[suit]}%
                         </div>
                         <div className={`coefficients-item__icon ${suit}`}></div>
