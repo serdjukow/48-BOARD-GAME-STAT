@@ -250,6 +250,7 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  z-index: 0;
   &::before {
     content: "";
     display: block;
@@ -258,19 +259,52 @@ body {
     transform: rotate(-180deg);
     mix-blend-mode: plus-lighter;
   }
+  &__items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    z-index: 1;
+  }
 }
 
 .coefficients {
   aspect-ratio: 1163/211;
   background-image: url("./assets/images/coefficients-frame.png");
   margin: 0 4% -5.5%;
-
   &__items {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
     gap: 6.5%;
+  }
+}
+
+.hot {
+  aspect-ratio: 634/173;
+  background-image: url("./assets/images/hot-frame.png");
+  margin-bottom: -11%;
+  &::before {
+    inset: 35% 8%;
+    background: url("./assets/images/hot-bg.gif");
+  }
+  &__items {
+    gap: clamp(0.63rem, calc(0.23rem + 1.69vw), 1.75rem);
+    margin-right: 8.5%;
+    margin-left: 26%;
+  }
+}
+
+.ice {
+  aspect-ratio: 1282/301;
+  background-image: url("./assets/images/ice-frame.png");
+  margin-left: -1%;
+  &::before {
+    inset: 35% 8% 12% 8%;
+    background: url("./assets/images/ice-bg.gif");
+  }
+  &__items {
+    gap: clamp(0.63rem, calc(0.23rem + 1.69vw), 1.75rem);
+    margin-top: 4%;
+    margin-right: 8.5%;
+    margin-left: 26.5%;
   }
 }
 
@@ -313,39 +347,16 @@ body {
   }
 }
 
-.hot {
-  aspect-ratio: 634/173;
-  justify-content: flex-start;
-  background-image: url("./assets/images/hot-frame.png");
-  margin-bottom: -11%;
-  z-index: 0;
-  &::before {
-    inset: 35% 8%;
-    background: url("./assets/images/hot-bg.gif");
-  }
-  &__items {
-    display: flex;
-    justify-content: center;
-    gap: 28px;
-    margin-right: 8.5%;
-    margin-left: 26%;
-    z-index: 1;
-  }
-}
-
 .hot-item,
 .ice-item {
   display: grid;
-  grid-template-columns: 1fr 64px;
+  grid-template-columns: 1fr clamp(1.13rem, calc(0.09rem + 4.41vw), 4.06rem);
   grid-template-rows: auto 1fr;
   align-items: center;
   &__ranks {
-    font-size: 74px;
+    font-size: clamp(1rem, calc(-0.28rem + 5.45vw), 4.63rem);
     line-height: 1;
     -webkit-text-stroke: 2px #fff;
-    @media (max-width: 1079.99px) {
-      //font-size: clamp(1.38rem, calc(-0.02rem + 5.96vw), 4rem);
-    }
     &.clubs {
       color: #33ff00;
     }
@@ -377,42 +388,15 @@ body {
     &.spades {
       background-image: url("./assets/images/spades.png");
     }
-    @media (max-width: 1079.99px) {
-      width: clamp(1.25rem, calc(0.25rem + 4.26vw), 3.13rem);
-    }
   }
   &__value {
-    font-size: 40px;
     font-family: "Quantico", sans-serif;
+    font-size: clamp(0.88rem, calc(0.3rem + 2.44vw), 2.5rem);
     font-weight: 700;
     font-style: normal;
     line-height: 1;
     color: #fff;
     text-align: center;
-    grid-column: 1 / -1; /* Занять всю ширину */
-    display: flex;
-    justify-content: center; /* Выравнивание по горизонтали */
-    align-items: center;
-  }
-}
-
-.ice {
-  aspect-ratio: 1282/301;
-  justify-content: flex-start;
-  background-image: url("./assets/images/ice-frame.png");
-  margin-left: -1%;
-  &::before {
-    inset: 35% 8% 12% 8%;
-    background: url("./assets/images/ice-bg.gif");
-  }
-  &__items {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 26px;
-    margin-top: 4%;
-    margin-right: 8.5%;
-    margin-left: 26.5%;
-    z-index: 1;
+    grid-column: 1 / -1;
   }
 }

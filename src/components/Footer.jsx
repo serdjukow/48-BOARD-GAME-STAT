@@ -41,7 +41,6 @@ const Footer = () => {
         });
     };
 
-
     return (
         <div className="app__footer footer">
             <div className="footer__container">
