@@ -1,38 +1,22 @@
 import React, { useState, useEffect } from 'react';
 
-const suits = ['clubs', 'hearts', 'diamonds', 'spades'];
-const ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'T'];
+const generateEmptyField = () => Array(4).fill({ num: '', suit: '' });
 
-const generateRandomRank = () => {
-    return ranks[Math.floor(Math.random() * ranks.length)];
-};
-
-const generateRandomCards = () => {
-    return suits.map(suit => ({
-        suit,
-        rank: generateRandomRank()
-    }));
-};
-
-const Body = () => {
-    const [fields, setFields] = useState(Array(15).fill(null));
+const Body = ({ resultBody }) => {
+    const [fields, setFields] = useState(Array(15).fill(generateEmptyField()));
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            const newData = generateRandomCards(4);
-            addNewData(newData);
-        }, 2000);
-
-        return () => clearInterval(interval);
-    }, []);
+        if (resultBody && resultBody.length > 0) {
+            addNewData(resultBody);
+        }
+    }, [resultBody]);
 
     const addNewData = (newData) => {
-        setFields(prevFields => {
-            const updatedFields = [newData, ...prevFields];
-            if (updatedFields.length > 15) {
-                updatedFields.pop();
+        setFields(() => {
+            while (newData.length < 15) {
+                newData.push(generateEmptyField());
             }
-            return updatedFields;
+            return newData;
         });
     };
 
@@ -43,15 +27,14 @@ const Body = () => {
                     <div key={index} className="app__body-field body-field">
                         <div className="body-field__range">{index + 1}</div>
                         <div className="body-field__result">
-                            {field ? field.map((card, idx) => (
+                            {field.map((card, idx) => (
                                 <div key={idx} className={`body-field__result-item result-item`}>
                                     <div className={`result-item__ranks ${card.suit}`}>
-                                        {card.rank}
+                                        {card.num || ' '}
                                     </div>
-                                    <div className={`result-item__icon ${card.suit}`}>
-                                    </div>
+                                    <div className={`result-item__icon ${card.suit}`}></div>
                                 </div>
-                            )) : ''}
+                            ))}
                         </div>
                     </div>
                 ))}

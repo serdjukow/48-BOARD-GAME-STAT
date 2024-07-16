@@ -2,11 +2,18 @@ import { useEffect, useState } from 'react';
 import { AnimatedCounter } from 'react-animated-counter';
 
 
-const Header = () => {
+const Header = ({ jackpot }) => {
     const [counterValue, setCounterValue] = useState(1000000);
     const [animate, setAnimate] = useState(false)
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [updateKey, setUpdateKey] = useState(0);
+
+    useEffect(() => {
+        if (counterValue !== jackpot) {
+            setCounterValue(jackpot > 1000000 ? jackpot : 1000000)
+            setAnimate(true)
+        }
+    }, [jackpot])
 
     useEffect(() => {
         const handleResize = () => {
@@ -22,19 +29,9 @@ const Header = () => {
     }, []);
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            const randomAddition = Math.floor(Math.random() * 100) + 1;
-            setCounterValue(prevCount => prevCount + randomAddition);
-            setAnimate(true);
-        }, 5000);
-
-        return () => clearInterval(interval);
-    }, []);
-
-    useEffect(() => {
         if (animate) {
             const timeout = setTimeout(() => setAnimate(false), 3000);
-            
+
             return () => clearTimeout(timeout);
         }
     }, [animate]);
