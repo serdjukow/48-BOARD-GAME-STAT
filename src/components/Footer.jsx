@@ -41,7 +41,7 @@ const Footer = ({ resultIce, resultHot, resultSuit }) => {
                                 <div className={`ice-item__icon ${card.suit}`}>
                                 </div>
                                 <div className={`ice-item__value`}>
-                                    {card.percent}
+                                    {card.count}
                                 </div>
                             </div>
                         )) : ''}
