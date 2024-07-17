@@ -155,8 +155,8 @@ body {
   align-items: center;
   gap: clamp(0.19rem, calc(0.03rem + 0.66vw), 0.4rem);
   &__ranks {
-    font-size: clamp(4rem, calc(-2rem + 8.89vw), 6rem); //96
-    line-height: 1; //clamp(1.5rem, calc(0.14rem + 5.82vw), 5.38rem);
+    font-size: clamp(4rem, calc(-2rem + 8.89vw), 6rem);
+    line-height: 1;
     -webkit-text-stroke: 2px #fff;
     @media (max-width: 1079.99px) {
       font-size: clamp(1.38rem, calc(-0.02rem + 5.96vw), 4rem);
