@@ -10,9 +10,6 @@ export default defineConfig({
     appIcon: "./src/assets/images/favicon.png",
     meta: {
       description: "48 BOARD GAME STATISTICS",
-      httpEquiv: "Content-Security-Policy",
-      content:"upgrade-insecure-requests"
     },
   },
 })
-

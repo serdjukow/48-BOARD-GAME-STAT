@@ -1,4 +1,4 @@
-const BASE = "http://r48.kodimgroup.ru/api/v1/game/stat/ "
+const BASE = "https://r48.kodimgroup.ru/api/v1/game/stat/ "
 
 export async function fetchStatistics() {
   const res = await fetch(`${BASE}`, {
