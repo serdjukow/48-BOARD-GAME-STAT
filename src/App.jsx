@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useStatisticsQuery } from "./hooks/useStatisticsQuery"
-
+import Loader from './components/Loader'
 import './App.scss';
 import Header from "./components/Header"
 import Footer from "./components/Footer"
@@ -39,7 +39,7 @@ const transformSuitData = (data) => {
 
 
 const App = () => {
-  const { data, isLoading, isSuccess } = useStatisticsQuery()
+  const { data, isLoading, isSuccess, error } = useStatisticsQuery()
   const [resultBody, setResultBody] = useState([])
   const [resultIce, setResultIce] = useState([])
   const [resultHot, setResultHot] = useState([])
@@ -56,7 +56,7 @@ const App = () => {
     }
   }, [data])
 
-  if (isLoading) return "Loading..."
+  if (isLoading) return <Loader />
 
   return (
     <div className="wrapper">
