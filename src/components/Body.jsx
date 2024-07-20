@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react';
 
 const generateEmptyField = () => Array(4).fill({ num: '', suit: '' });
 
-const Body = ({ resultBody }) => {
+const Body = ({ resultBody = [] }) => {
     const [fields, setFields] = useState(Array(15).fill(generateEmptyField()));
 
     useEffect(() => {
-        if (resultBody && resultBody.length > 0) {
+        if (resultBody.length > 0) {
             addNewData(resultBody);
         }
     }, [resultBody]);
@@ -30,7 +30,7 @@ const Body = ({ resultBody }) => {
                             {field.map((card, idx) => (
                                 <div key={idx} className={`body-field__result-item result-item`}>
                                     <div className={`result-item__ranks ${card.suit}`}>
-                                        {card.num || ' '}
+                                        {card.num}
                                     </div>
                                     <div className={`result-item__icon ${card.suit}`}></div>
                                 </div>

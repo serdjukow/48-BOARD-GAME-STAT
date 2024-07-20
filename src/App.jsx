@@ -56,14 +56,20 @@ const App = () => {
     }
   }, [data])
 
-  if (isLoading) return <Loader />
-
   return (
     <div className="wrapper">
       <div className="app">
-        {isSuccess && <Header jackpot={jackpot} />}
-        {isSuccess && <Body resultBody={resultBody} />}
-        {isSuccess && <Footer resultHot={resultHot} resultIce={resultIce} resultSuit={resultSuit} />}
+        {
+          isLoading
+            ?
+            <Loader />
+            :
+            <>
+              {isSuccess && <Header jackpot={jackpot} />}
+              {isSuccess && <Body resultBody={resultBody} />}
+              {isSuccess && <Footer resultHot={resultHot} resultIce={resultIce} resultSuit={resultSuit} />}
+            </>
+        }
       </div>
     </div>
   );

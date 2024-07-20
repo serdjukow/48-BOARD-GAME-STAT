@@ -1,4 +1,4 @@
-const Footer = ({ resultIce, resultHot, resultSuit }) => {
+const Footer = ({ resultIce = [], resultHot = [], resultSuit = [] }) => {
 
     return (
         <div className="app__footer footer">
@@ -17,7 +17,7 @@ const Footer = ({ resultIce, resultHot, resultSuit }) => {
                 </div>
                 <div className="footer__hot hot">
                     <div className="hot__items">
-                        {resultHot ? resultHot.map((card, idx) => (
+                        {resultHot.map((card, idx) => (
                             <div key={idx} className="hot__item hot-item">
                                 <div className={`hot-item__ranks ${card.suit}`}>
                                     {card.rank}
@@ -28,12 +28,12 @@ const Footer = ({ resultIce, resultHot, resultSuit }) => {
                                     {card.count}
                                 </div>
                             </div>
-                        )) : ''}
+                        ))}
                     </div>
                 </div>
                 <div className="footer__ice ice">
                     <div className="ice__items">
-                        {resultIce ? resultIce.map((card, idx) => (
+                        {resultIce.map((card, idx) => (
                             <div key={idx} className="ice__item ice-item">
                                 <div className={`ice-item__ranks ${card.suit}`}>
                                     {card.rank}
@@ -44,7 +44,7 @@ const Footer = ({ resultIce, resultHot, resultSuit }) => {
                                     {card.count}
                                 </div>
                             </div>
-                        )) : ''}
+                        ))}
                     </div>
                 </div>
             </div>

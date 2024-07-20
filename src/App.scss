@@ -36,7 +36,6 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
-
   &__body {
     flex: 1 1 auto;
     width: 76%;
@@ -60,12 +59,12 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  &::before {
+  &::after {
     content: "";
     display: block;
     position: absolute;
     inset: 0;
-    filter: blur(clamp(0.31rem, calc(0.04rem + 1.16vw), 1.09rem));
+    filter: blur(clamp(0.31rem, calc(0.04rem + 1.16vw), 0.8rem));
     background-image: url("./assets/images/header-bg.gif");
     transform: rotate(-180deg);
     mix-blend-mode: plus-lighter;
@@ -78,11 +77,13 @@ body {
     transition: cubic-bezier(0.37, 0.69, 0.71, 0.51);
     transform-origin: center;
     will-change: auto;
+    animation-name: scaleUpDown;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
     @media (max-width: 1079.99px) {
       font-size: clamp(1.88rem, calc(-0.05rem + 8.23vw), 5.5rem);
     }
     &.animate {
-      animation: scaleUpDown 3s;
     }
   }
 }
@@ -96,6 +97,9 @@ body {
   }
   71.43% {
     transform: scale(1.15);
+  }
+  85% {
+    transform: scale(1);
   }
   100% {
     transform: scale(1);
@@ -271,7 +275,7 @@ body {
 .coefficients {
   aspect-ratio: 1163/211;
   background-image: url("./assets/images/coefficients-frame.png");
-  margin: 0 4% -5.5%;
+  margin: 0 3.5% -5.5%;
   &__items {
     gap: 6.5%;
   }
@@ -282,7 +286,7 @@ body {
   background-image: url("./assets/images/hot-frame.png");
   margin-bottom: -11%;
   &::before {
-    inset: 35% 8%;
+    inset: 30% 8% 30% 8%;
     background: url("./assets/images/hot-bg.gif");
   }
   &__items {
@@ -310,7 +314,7 @@ body {
 
 .coefficients-item {
   aspect-ratio: 1/1;
-  width: 11.36%;
+  width: 11.2%;
   position: relative;
   background-position: center;
   background-size: cover;
