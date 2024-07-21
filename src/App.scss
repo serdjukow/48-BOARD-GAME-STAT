@@ -423,13 +423,13 @@ body {
   }
 }
 
-.ticker-view .ticker-digit {
+.ticker-view .ticker-column-container .ticker-digit {
   text-align: center;
   span {
     text-align: end;
     text-transform: uppercase;
     background: linear-gradient(
-      240deg,
+      165deg,
       #bf7943 0%,
       #ffe977 42.5%,
       #c27a44 63.5%,
@@ -439,6 +439,7 @@ body {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-size: 700%;
   }
 }
 
@@ -455,6 +456,42 @@ body {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+}
+
+.ticker-view .ticker-column-container:nth-child(1) .ticker-digit {
+  span {
+    background-position: 0%;
+  }
+}
+.ticker-view .ticker-column-container:nth-child(2) .ticker-digit {
+  span {
+    background-position: 14.2857%;
+  }
+}
+.ticker-view .ticker-column-container:nth-child(3) .ticker-digit {
+  span {
+    background-position: 28.5714%;
+  }
+}
+.ticker-view .ticker-column-container:nth-child(4) .ticker-digit {
+  span {
+    background-position: 42.8571%;
+  }
+}
+.ticker-view .ticker-column-container:nth-child(5) .ticker-digit {
+  span {
+    background-position: 57.1428%;
+  }
+}
+.ticker-view .ticker-column-container:nth-child(6) .ticker-digit {
+  span {
+    background-position: 71.4285%;
+  }
+}
+.ticker-view .ticker-column-container:nth-child(7) .ticker-digit {
+  span {
+    background-position: 85.7142%;
   }
 }
 
