@@ -58,7 +58,7 @@ body {
   justify-content: center;
   aspect-ratio: 360/91;
   position: relative;
-  background-image: url("./assets/images/header-frame.png");
+  background-image: url("./assets/images/header-frame.svg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -98,7 +98,7 @@ body {
       animation-name: glareAnimation;
       animation-duration: 8s;
       animation-iteration-count: infinite;
-      background-image: url("./assets/images/blick.png");
+      background-image: url("./assets/images/blick.svg");
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -160,7 +160,7 @@ body {
     content: "";
     display: block;
     position: absolute;
-    background-image: url("./assets/images/border-field.png");
+    background-image: url("./assets/images/border-field.svg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -279,7 +279,7 @@ body {
 
 .coefficients {
   aspect-ratio: 1163/211;
-  background-image: url("./assets/images/coefficients-frame.png");
+  background-image: url("./assets/images/coefficients-frame.svg");
   margin: 0 3.5% -5.5%;
   &__items {
     gap: 6.5%;
@@ -334,7 +334,7 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("./assets/images/coefficients-item-bg.png");
+  background-image: url("./assets/images/coefficients-item-bg.svg");
   text-align: center;
   &__ranks {
     font-size: clamp(0.56rem, calc(0.1rem + 1.97vw), 1.88rem);
