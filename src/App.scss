@@ -317,10 +317,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     filter: blur(10px);
-    transform: rotate(-90deg);
-    height: 357%;
-    inset: -119% 44%;
-    width: 13%;
+    inset: 39% 8% 12% 8%;
   }
   &__items {
     gap: clamp(0.63rem, calc(0.23rem + 1.69vw), 1.75rem);
