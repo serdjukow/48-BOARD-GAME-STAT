@@ -46,6 +46,7 @@ const App = () => {
   const [resultSuit, setResultSuit] = useState([])
 
   const { hot, ice, lastround, suit, jackpot } = isSuccess && data
+  console.log(data);
 
   useEffect(() => {
     if (isSuccess) {

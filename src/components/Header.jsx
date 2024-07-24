@@ -8,6 +8,8 @@ const Header = ({ jackpot }) => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [updateKey, setUpdateKey] = useState(0);
 
+
+
     useEffect(() => {
         if (counterValue !== jackpot) {
             setCounterValue(jackpot > 1000000 ? jackpot : 1000000)
@@ -46,6 +48,11 @@ const Header = ({ jackpot }) => {
 
     return (
         <div className="app__header header">
+            <div className="header__decoration">
+                <div className="header__decoration-left"></div>
+                <div className="header__decoration-middle"></div>
+                <div className="header__decoration-right"></div>
+            </div>
             <div className={`header__jackpot-value ${animate ? 'animate' : ''}`}>
                 <AnimatedCounter
                     key={`${windowWidth}-${updateKey}`}
