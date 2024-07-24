@@ -59,10 +59,11 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    aspect-ratio: 4325/3231;
-    background-image: url("./assets/images/header-frame3.svg");
-    background-position: 50% 66%;
+    aspect-ratio: 2867/4669;
+    background-image: url("./assets/images/header-frame.png");
+    background-position: center;
     background-repeat: no-repeat;
+    background-size: contain;
   }
 }
 
@@ -86,22 +87,6 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      display: block;
-    }
-    &::before {
-      top: -58px;
-      left: -55px;
-      width: 47%;
-    }
-    &::after {
-      bottom: 0;
-      right: 0;
-      width: 20%;
-    }
   }
 
   &__decoration-left,
@@ -114,20 +99,19 @@ body {
     background-size: 120%;
     background-repeat: no-repeat;
     width: 42.8%;
+    top: 4%;
     opacity: 0.5;
   }
 
   &__decoration-left {
     background-image: url("./assets/images/fire.gif");
     transform: rotate(29deg);
-    top: 11px;
-    left: -3px;
+    left: 0;
   }
 
   &__decoration-right {
     background-image: url("./assets/images/fire-right.gif");
-    top: 11px;
-    right: -3px;
+    right: -1%;
     transform: rotate(-34deg) scaleX(-1);
   }
 
