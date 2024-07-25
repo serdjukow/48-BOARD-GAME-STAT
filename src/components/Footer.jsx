@@ -2,6 +2,7 @@ const Footer = ({ resultIce = [], resultHot = [], resultSuit = [] }) => {
 
     return (
         <div className="app__footer footer">
+            <div className="footer__title">LAST 100 SPIN</div>
             <div className="footer__container">
                 <div className="footer__coefficients coefficients">
                     <div className="coefficients__items">
