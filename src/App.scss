@@ -146,9 +146,9 @@ body {
     animation-name: scaleUpDown;
     animation-duration: 8s;
     animation-iteration-count: infinite;
-    // @media (max-width: 1079.99px) {
-    //   font-size: clamp(1.88rem, calc(-0.05rem + 8.23vw), 5.5rem);
-    // }
+    @media (max-width: 1079.99px) {
+      font-size: clamp(1.88rem, calc(-0.05rem + 8.23vw), 5.5rem);
+    }
     &::before {
       aspect-ratio: 209/279;
       content: "";
@@ -218,6 +218,7 @@ body {
   justify-content: center;
   background-color: rgba($color: #fff, $alpha: 0.04);
   width: 100%;
+  user-select: none;
   &::before,
   &::after {
     content: "";
@@ -283,9 +284,9 @@ body {
     font-size: clamp(4rem, calc(-2rem + 8.89vw), 6rem);
     line-height: 0;
     -webkit-text-stroke: 2px #fff;
-    // @media (max-width: 1079.99px) {
-    //   font-size: clamp(1.38rem, calc(-0.02rem + 5.96vw), 4rem);
-    // }
+    @media (max-width: 1079.99px) {
+      font-size: clamp(1.38rem, calc(-0.02rem + 5.96vw), 4rem);
+    }
     &.clubs {
       color: #33ff00;
     }
@@ -347,6 +348,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 0;
+  user-select: none;
   &::before {
     content: "";
     display: block;
